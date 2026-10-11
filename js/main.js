@@ -6,4 +6,4 @@ const photos = Array.from(
   (_, index) => createPhoto(index + 1)
 );
 
-console.log(photos); // для проверки
+console.log(photos);

@@ -1,5 +1,14 @@
-import { NAMES, MESSAGES, DESCRIPTIONS, MIN_LIKES, MAX_LIKES,
-         MIN_COMMENTS, MAX_COMMENTS, MIN_AVATAR, MAX_AVATAR } from './data.js';
+import {
+  NAMES,
+  MESSAGES,
+  DESCRIPTIONS,
+  MIN_LIKES,
+  MAX_LIKES,
+  MIN_COMMENTS,
+  MAX_COMMENTS,
+  MIN_AVATAR,
+  MAX_AVATAR
+} from './data.js';
 import { getRandomInteger, getRandomElement } from './utils.js';
 
 let commentId = 1;

@@ -44,5 +44,3 @@ export const DESCRIPTIONS = [
   'Полевые цветы в стеклянной банке',
   'Велосипед у моря'
 ];
-
-export let commentId = 1;
