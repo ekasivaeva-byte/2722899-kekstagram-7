@@ -1,3 +1,6 @@
+import { resetScale } from './scale.js';
+import { resetEffects } from './effects.js';
+
 const MAX_HASHTAGS = 5;
 const MAX_COMMENT_LENGTH = 140;
 const HASHTAG_REGEXP = /^#[a-zа-яё0-9]{1,19}$/i;
@@ -68,6 +71,8 @@ const closeForm = () => {
   form.reset();
   fileInput.value = '';
   pristine.reset();
+  resetScale();
+  resetEffects();
 };
 
 const openForm = () => {
