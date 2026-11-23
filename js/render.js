@@ -4,7 +4,8 @@ const pictureTemplate = document
   .content
   .querySelector('.picture');
 
-const createPicture = ({ url, description, likes, comments }) => {
+const createPicture = (photo, onPictureClick) => {
+  const { url, description, likes, comments } = photo;
   const picture = pictureTemplate.cloneNode(true);
   const image = picture.querySelector('.picture__img');
 
@@ -15,14 +16,19 @@ const createPicture = ({ url, description, likes, comments }) => {
     ? comments.length
     : comments;
 
+  picture.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    onPictureClick(photo);
+  });
+
   return picture;
 };
 
-export const renderPictures = (photos) => {
+export const renderPictures = (photos, onPictureClick) => {
   const fragment = document.createDocumentFragment();
 
   photos.forEach((photo) => {
-    fragment.appendChild(createPicture(photo));
+    fragment.appendChild(createPicture(photo, onPictureClick));
   });
 
   picturesContainer.appendChild(fragment);

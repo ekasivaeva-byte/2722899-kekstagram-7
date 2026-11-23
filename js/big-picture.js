@@ -60,6 +60,14 @@ function onDocumentKeydown(evt) {
   }
 }
 
+function onCloseBigPictureClick() {
+  closeBigPicture();
+}
+
+function onCommentsLoaderClick() {
+  renderNextComments();
+}
+
 export const openBigPicture = ({ url, description, likes, comments }) => {
   bigPictureImage.src = url;
   bigPictureImage.alt = description;
@@ -77,5 +85,5 @@ export const openBigPicture = ({ url, description, likes, comments }) => {
   document.addEventListener('keydown', onDocumentKeydown);
 };
 
-commentsLoader.addEventListener('click', renderNextComments);
-closeButton.addEventListener('click', closeBigPicture);
+closeButton.addEventListener('click', onCloseBigPictureClick);
+commentsLoader.addEventListener('click', onCommentsLoaderClick);
